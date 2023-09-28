@@ -18,12 +18,12 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             
-            Text("Nora's")
+            Text("My")
                 .font(.largeTitle)
                 .fontWeight(.thin)
                 .foregroundColor(Color.pink)
                 .lineSpacing(20)
-            Text("Wonderland")
+            Text("Home")
                 .font(.largeTitle)
                 .fontWeight(.thin)
                 .foregroundColor(Color.pink)
@@ -47,25 +47,31 @@ struct Page1: View {
   var body: some View {
     VStack() {
       HStack {
-        Image(systemName: "circle.fill")
+        Image(systemName: "chair.lounge.fill")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
-        Image(systemName: "circle")
+        Image(systemName: "washer")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
-        Image(systemName: "rectangle")
+        Image(systemName: "cooktop")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
       }
       HStack {
-        Image(systemName: "triangle")
+        Image(systemName: "fireplace")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
-        Image(systemName: "hexagon")
+        Image(systemName: "dryer")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
-        Image(systemName: "pentagon")
+        Image(systemName: "frying.pan.fill")
           .resizable()
+          .foregroundColor(Color.pink)
           .frame(width:100, height: 100)
       }
       // Spacer()
@@ -83,16 +89,12 @@ import SwiftUI
 
 // Array of image names
 let imageArray = [
-  "rectangle",
-  "triangle",
-  "hexagon",
-  "pentagon",
-  "rhombus",
-  "diamond",
-  "circle",
-  "seal",
-  "oval",
-  "capsule"
+  "chair.lounge.fill",
+  "washer",
+  "cooktop",
+  "fireplace",
+  "dryer",
+  "frying.pan.fill",
 ]
 
 struct Page2: View {
@@ -102,6 +104,7 @@ struct Page2: View {
         Image(systemName: imageArray[index])
           .resizable()
           .frame(width:100, height: 100)
+          .foregroundColor(Color.pink)
       }
     }
   }
@@ -113,21 +116,36 @@ struct Page2_Previews: PreviewProvider {
   }
 }
 
-// https://tisch.nyu.edu/about/directory
+
+
 
 import SwiftUI
 
 struct Page3: View {
   var body: some View {
-    VStack {
-      ForEach(0 ..< imageArray.count) { index in
-        let item = imageArray[index]
-        HStack {
-          Image(systemName: item)
-            .resizable()
-            .frame(width:100, height: 100)
-          Text(item)
-          Spacer()
+    NavigationView {
+      List {
+        ForEach(0 ..< imageArray.count) { index in
+          let item = imageArray[index]
+          NavigationLink {
+            VStack {
+              Image(systemName: item)
+                .resizable()
+                .frame(width:100, height: 100)
+                .foregroundColor(Color.pink)
+              Text(item)
+              Spacer()
+            }
+          } label: {
+            HStack {
+              Image(systemName: item)
+                .resizable()
+                .frame(width:100, height: 100)
+                .foregroundColor(Color.pink)
+              Text(item)
+              Spacer()
+            }
+          }
         }
       }
     }
@@ -140,79 +158,12 @@ struct Page3_Previews: PreviewProvider {
   }
 }
 
-// https://tisch.nyu.edu/about/directory
+
 
 
 import SwiftUI
 
 struct Page4: View {
-  var body: some View {
-    List {
-      ForEach(0 ..< imageArray.count) { index in
-        let item = imageArray[index]
-        HStack {
-          Image(systemName: item)
-            .resizable()
-            .frame(width:100, height: 100)
-          Text(item)
-          Spacer()
-        }
-      }
-    }
-  }
-}
-
-struct Page4_Previews: PreviewProvider {
-  static var previews: some View {
-    Page4()
-  }
-}
-
-// https://tisch.nyu.edu/about/directory
-
-import SwiftUI
-
-struct Page5: View {
-  var body: some View {
-    NavigationView {
-      List {
-        ForEach(0 ..< imageArray.count) { index in
-          let item = imageArray[index]
-          NavigationLink {
-            VStack {
-              Image(systemName: item)
-                .resizable()
-                .frame(width:100, height: 100)
-              Text(item)
-              Spacer()
-            }
-          } label: {
-            HStack {
-              Image(systemName: item)
-                .resizable()
-                .frame(width:100, height: 100)
-              Text(item)
-              Spacer()
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-struct Page5_Previews: PreviewProvider {
-  static var previews: some View {
-    Page5()
-  }
-}
-
-// https://tisch.nyu.edu/about/directory
-
-
-import SwiftUI
-
-struct Page6: View {
   var body: some View {
     NavigationView {
       List {
@@ -225,7 +176,7 @@ struct Page6: View {
           }
         }
       }
-      .navigationTitle("My Shapes")
+      .navigationTitle("My Home")
     }
   }
 }
@@ -256,89 +207,16 @@ struct ItemRow: View {
   }
 }
 
-struct Page6_Previews: PreviewProvider {
+struct Page4_Previews: PreviewProvider {
   static var previews: some View {
-    Page6()
+    Page4()
   }
 }
 
+
 import SwiftUI
-import UIKit
 
 struct Page7: View {
-  @State var len = 100.0
-  @State var fillFlag = true
-  @State var selectedImage = "circle"
-  var body: some View {
-    VStack() {
-      Image(systemName: selectedImage  + (fillFlag ? ".fill" : "") )
-        .resizable()
-        .frame(width: len, height: len)
-      Toggle(isOn: $fillFlag) {
-        Text("Fill")
-      }
-      Slider(value: $len, in: 100.0...400.0)
-      Text("len \(len)")
-      Picker("Image Name", selection: $selectedImage) {
-        Text("circle").tag("circle")
-        Text("flag").tag("flag")
-        Text("ear").tag("ear")
-      }
-    }
-  }
-}
-
-struct Page7_Previews: PreviewProvider {
-  static var previews: some View {
-    Page7()
-  }
-}
-
-import SwiftUI
-import UIKit
-
-struct Page8: View {
-  @State var len = 100.0
-  @State var fillFlag = true
-  @State var selectedImage = "circle"
-  var body: some View {
-    VStack() {
-      ExtractedView(selectedImage: selectedImage, fillFlag: fillFlag, len: len)
-      Toggle(isOn: $fillFlag) {
-        Text("Fill")
-      }
-      Slider(value: $len, in: 100.0...400.0)
-      Text("len \(len)")
-      Picker("Image Name", selection: $selectedImage) {
-        ForEach(0 ..< imageArray.count) { index in
-          let item = imageArray[index]
-          Text(item).tag(item)
-        }
-      }
-    }
-  }
-}
-
-struct ExtractedView: View {
-  var selectedImage: String
-  var fillFlag: Bool
-  var len: Double
-  var body: some View {
-    Image(systemName: selectedImage  + (fillFlag ? ".fill" : "") )
-      .resizable()
-      .frame(width: len, height: len)
-  }
-}
-
-struct Page8_Previews: PreviewProvider {
-  static var previews: some View {
-    Page8()
-  }
-}
-
-import SwiftUI
-
-struct Page9: View {
   var body: some View {
     NavigationView {
       List {
@@ -368,9 +246,9 @@ struct Page9: View {
   }
 }
 
-struct Page9_Previews: PreviewProvider {
+struct Page7_Previews: PreviewProvider {
   static var previews: some View {
-    Page9()
+    Page7()
   }
 }
 
