@@ -69,6 +69,7 @@ struct MusicPlaylistView: View {
         
         
         .onAppear(perform: setupAudio)
+        
         .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
             updateProgress()
         }
