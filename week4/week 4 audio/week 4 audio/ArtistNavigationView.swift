@@ -10,6 +10,7 @@
 import SwiftUI
 
 struct ArtistNavigationView: View {
+    @EnvironmentObject var audioManager: AudioManager
     @State private var navPath = NavigationPath()
     
     let selections = ["Fargo","Stand By Me"]

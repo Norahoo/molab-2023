@@ -11,11 +11,13 @@ import SwiftUI
 @main
 struct week_4_audioApp: App {
     @StateObject var audioDJ = AudioDJ()
+    @StateObject var audioManager = AudioManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(audioDJ)
+                .environmentObject(audioManager)
         }
     }
 }

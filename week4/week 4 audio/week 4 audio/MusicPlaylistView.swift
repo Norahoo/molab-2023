@@ -11,6 +11,7 @@ import SwiftUI
 import AVKit
 
 struct MusicPlaylistView: View {
+    @EnvironmentObject var audioManager: AudioManager
     @StateObject var audioDJ = AudioDJ()
     let audioFileName = "fargo"
     
@@ -176,7 +177,7 @@ struct MusicPlaylistView: View {
                     }
                     
                     Button{
-                        audioDJ.play()
+                        audioManager.playAudio()
                     }label: {
                         Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                             .font(size.height < 300 ? .largeTitle : .system(size: 50))
