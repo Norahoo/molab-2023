@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B544D812B23F4F700CABEDA /* flower.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0B544D802B23F4F700CABEDA /* flower.scn */; };
+		0B873E4E2B2AA42600246D45 /* banana.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0B873E4D2B2AA42600246D45 /* banana.scn */; };
+		0B873E542B2AEC0D00246D45 /* pepper.scn in Resources */ = {isa = PBXBuildFile; fileRef = 0B873E532B2AEC0D00246D45 /* pepper.scn */; };
 		8B7D4E392221CA4800E0E448 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D4E382221CA4800E0E448 /* ViewController.swift */; };
 		8B7D4E3C2221CA4800E0E448 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7D4E3A2221CA4800E0E448 /* Main.storyboard */; };
 		8B7D4E3E2221CA4F00E0E448 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7D4E3D2221CA4F00E0E448 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B544D802B23F4F700CABEDA /* flower.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = flower.scn; sourceTree = "<group>"; };
+		0B873E4D2B2AA42600246D45 /* banana.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = banana.scn; sourceTree = "<group>"; };
+		0B873E532B2AEC0D00246D45 /* pepper.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pepper.scn; sourceTree = "<group>"; };
 		8B7D4E312221CA4800E0E448 /* FaceMesh-new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FaceMesh-new.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7D4E382221CA4800E0E448 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B7D4E3B2221CA4800E0E448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +66,11 @@
 			children = (
 				ABB7C41F29AF54F500711661 /* FaceMeshApp.swift */,
 				ABB7C41E29AF54F500711661 /* ContentView.swift */,
+				0B873E4D2B2AA42600246D45 /* banana.scn */,
+				0B544D802B23F4F700CABEDA /* flower.scn */,
 				8B7D4E382221CA4800E0E448 /* ViewController.swift */,
 				8B7D4E3A2221CA4800E0E448 /* Main.storyboard */,
+				0B873E532B2AEC0D00246D45 /* pepper.scn */,
 				8B7D4E3D2221CA4F00E0E448 /* Assets.xcassets */,
 				8B7D4E3F2221CA4F00E0E448 /* LaunchScreen.storyboard */,
 				8B7D4E422221CA4F00E0E448 /* Info.plist */,
@@ -130,7 +139,10 @@
 			files = (
 				8B7D4E412221CA4F00E0E448 /* LaunchScreen.storyboard in Resources */,
 				8B7D4E3E2221CA4F00E0E448 /* Assets.xcassets in Resources */,
+				0B544D812B23F4F700CABEDA /* flower.scn in Resources */,
+				0B873E542B2AEC0D00246D45 /* pepper.scn in Resources */,
 				8B7D4E3C2221CA4800E0E448 /* Main.storyboard in Resources */,
+				0B873E4E2B2AA42600246D45 /* banana.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
